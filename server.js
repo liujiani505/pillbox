@@ -32,6 +32,8 @@ const {Schema, model} = mongoose;
 const pillsSchema = new Schema({
     name: String,
     description: String,
+    color: String,
+    shape: String,
     dosage: Number,
     after_food: Boolean,
     quantity: Number
@@ -67,8 +69,15 @@ app.get("/", (req, res) => {
 app.get("/pills/seed", (req, res) => {
     // array of starter pills
     const startPills = [
-        {name: "ibuprofen", description:"Ibuprofen is a nonsteroidal anti-inflammatory drug (NSAID). It works by reducing hormones that cause inflammation and pain in the body.", dosage:"oral capsule (200 mg); oral suspension (100 mg/5 mL; 50 mg/1.25 mL); oral tablet (100 mg; 200 mg; 400 mg; 600 mg; 800 mg); oral tablet, chewable (100 mg; 50 mg)", }
+        {name: "ibuprofen", description:"Ibuprofen is an over-the-counter medicine used to reduce fever and relieve pain", color: "White", shape:"Capsule-shape", dosage: 400, after_food: true, quantity: 50}
     ]
+    // Delete all pills
+    Pill.remove({}, (err, data) => {
+        // Seed Starter Pills
+        Pill.create(startPills, (err, data) => {
+            res.json(data);
+        })
+    })
 })
 
 //////////////////////////////////////////////////
