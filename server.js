@@ -6,6 +6,7 @@ const express = require("express");
 const morgan = require("morgan");
 const methodOverride = require("method-override");
 const PillRouter = require("./controllers/pill")
+const UserRouter = require("./controllers/user")
 
 //////////////////////////////////////////////////
 // Create Express app
@@ -21,6 +22,7 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.use("/pills", PillRouter)
+app.use("/user", UserRouter)
 
 //////////////////////////////////////////////////
 // Routes
