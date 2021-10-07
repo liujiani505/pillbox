@@ -69,7 +69,7 @@ app.get("/", (req, res) => {
 app.get("/pills/seed", (req, res) => {
     // array of starter pills
     const startPills = [
-        {name: "ibuprofen", description:"Ibuprofen is an over-the-counter medicine used to reduce fever and relieve pain", color: "White", shape:"Capsule-shape", dosage: 400, after_food: true, quantity: 50}
+        {name: "ibuprofen", color: "White", shape:"Capsule-shape", dosage: 400, after_food: true, quantity: 50}
     ]
     // Delete all pills
     Pill.remove({}, (err, data) => {
@@ -77,6 +77,21 @@ app.get("/pills/seed", (req, res) => {
         Pill.create(startPills, (err, data) => {
             res.json(data);
         })
+    })
+})
+
+// Index Route
+app.get("/pills", async (req, res) =>{
+    const pills = await Pill.find({});
+    res.render("pills/index.ejs", { pills });
+})
+
+
+// Show Route
+app.get("/pills/:id", (req, res) => {
+    const id = req.params.id
+    Pill.findById(id, (err, pill) => {
+        res.render("pills/show.ejs", { pill })
     })
 })
 

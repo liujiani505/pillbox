@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <div>
+        <% for (pill of pills) { %>
+            <article>
+            <a href="/pills/<%= pill._id %>">
+                <h2>
+                <%= pill.name %>
+                </h2>
+            </a>
+            </article>
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>
+
