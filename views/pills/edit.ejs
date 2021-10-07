@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+    <body>
+    <%- include("../partials/header.ejs") %>
+        <main>
+            <div>
+                <form action="/pills/<%= pill._id %>?_method=PUT" method="post">
+                    <fieldset>
+                        <legend>Edit a <%= pill.name %></legend>
+                    <label>
+                        NAME:<input
+                        type="text"
+                        name="name"
+                        value="<%= pill.name %>"
+                        />
+                    </label>
+                    <label>
+                        COLOR:<input
+                        type="text"
+                        name="color"
+                        value="<%= pill.color %>"
+                        />
+                    </label>
+                    <label>
+                        SHAPE:<input
+                        type="text"
+                        name="shape"
+                        value="<%= pill.shape %>"
+                        />
+                    </label>
+                    <label>
+                        Before Food:<input type="checkbox" name="beforeFood" <%= pill.beforeFood ? "checked" : "" %>/>
+                    </label>
+                    <label>
+                        After Food:<input type="checkbox" name="afterFood" <%= pill.afterFood ? "checked" : "" %>/>
+                    </label>
+                    </fieldset>
+                    <input type="submit" value="Update <%= pill.name %>" />
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

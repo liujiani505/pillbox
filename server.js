@@ -104,6 +104,34 @@ app.post("/pills", (req, res) => {
     })
 })
 
+// Edit Route
+app.get("/pills/:id/edit", (req, res) => {
+    const id = req.params.id;
+    Pill.findById(id, (err, pill) => {
+        res.render("pills/edit.ejs", { pill })
+    })
+})
+
+// Update Route
+app.put("/pills/:id", (req, res) => {
+    const id = req.params.id;
+    req.body.name = req.body.name;
+    req.body.color = req.body.color;
+    req.body.shape = req.body.shape;
+    req.body.beforeFood = req.body.beforeFood;
+    req.body.afterFood = req.body.afterFood;
+    Pill.findByIdAndUpdate(id, req.body, {new: true}, (err, fruit) => {
+        res.redirect("/pills");
+    })
+})
+
+// Destroy Route
+app.delete("/pills/:id", (req, res) => {
+    const id = req.params.id;
+    Pill.findByIdAndRemove(id, (err, pill) =>{
+        res.redirect("/pills")
+    })
+})
 
 // Show Route
 app.get("/pills/:id", (req, res) => {
