@@ -6,6 +6,7 @@
     <%- include("../partials/header.ejs") %>
     <main>
       <div>
+        <a href="/pills/new"><button>Add A New Pill</button></a>
         <% for (pill of pills) { %>
             <article>
             <a href="/pills/<%= pill._id %>">

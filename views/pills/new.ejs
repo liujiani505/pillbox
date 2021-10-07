@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+    <body>
+    <%- include("../partials/header.ejs") %>
+        <main>
+            <div>
+                <form action="/pills" method="post">
+                    <fieldset>
+                        <legend>Create a New Pill</legend>
+                    <label>
+                        NAME:<input
+                        type="text"
+                        name="name"
+                        placeholder="enter pill name"
+                        />
+                    </label>
+                    <label>
+                        COLOR:<input
+                        type="text"
+                        name="color"
+                        placeholder="enter pill color"
+                        />
+                    </label>
+                    <label>
+                        SHAPE:<input
+                        type="text"
+                        name="shape"
+                        placeholder="enter pill shape"
+                        />
+                    </label>
+                    <label>
+                        Before Food:<input type="checkbox" name="beforeFood"/>
+                    </label>
+                    <label>
+                        After Food:<input type="checkbox" name="afterFood"/>
+                    </label>
+                    </fieldset>
+                    <input type="submit" value="create" />
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

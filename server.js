@@ -35,7 +35,8 @@ const pillsSchema = new Schema({
     color: String,
     shape: String,
     dosage: Number,
-    after_food: Boolean,
+    beforeFood: Boolean,
+    afterFood: Boolean,
     quantity: Number
 });
 
@@ -81,9 +82,26 @@ app.get("/pills/seed", (req, res) => {
 })
 
 // Index Route
-app.get("/pills", async (req, res) =>{
+app.get("/pills", async (req, res) => {
     const pills = await Pill.find({});
     res.render("pills/index.ejs", { pills });
+})
+
+// New Route
+app.get("/pills/new", (req, res) => {
+    res.render("pills/new.ejs")
+})
+
+// Create Route
+app.post("/pills", (req, res) => {
+    req.body.name = req.body.name;
+    req.body.color = req.body.color;
+    req.body.shape = req.body.shape;
+    req.body.beforeFood = req.body.beforeFood;
+    req.body.afterFood = req.body.afterFood;
+    Pill.create(req.body, (err, pill) => {
+        res.redirect("/pills")
+    })
 })
 
 
