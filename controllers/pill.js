@@ -14,20 +14,6 @@ const router = express.Router()
 /////////////////////////////////////////
 // Routes
 /////////////////////////////////////////
-// Seed Database
-router.get("/seed", (req, res) => {
-    // array of starter pills
-    const startPills = [
-        {name: "ibuprofen", color: "White", shape:"Capsule-shape", dosage: 400, after_food: true, quantity: 50}
-    ]
-    // Delete all pills
-    Pill.remove({}, (err, data) => {
-        // Seed Starter Pills
-        Pill.create(startPills, (err, data) => {
-            res.json(data);
-        })
-    })
-})
 
 // Index Route
 router.get("/", async (req, res) => {
