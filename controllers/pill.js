@@ -11,13 +11,26 @@ const Pill = require("../models/pill")
 const router = express.Router()
 
 
+////////////////////////////////////////
+// Router Middleware
+////////////////////////////////////////
+// Authorization Middleware
+router.use((req, res, next) => {
+    if(req.session.loggedIn) {
+        next();
+    } else {
+        res.redirect("/user/login");
+    }
+})
+
+
 /////////////////////////////////////////
 // Routes
 /////////////////////////////////////////
 
 // Index Route
 router.get("/", async (req, res) => {
-    const pills = await Pill.find({});
+    const pills = await Pill.find({username: req.session.username});
     res.render("pills/index.ejs", { pills });
 })
 
@@ -33,6 +46,7 @@ router.post("/", (req, res) => {
     req.body.shape = req.body.shape;
     req.body.beforeFood = req.body.beforeFood;
     req.body.afterFood = req.body.afterFood;
+    req.body.username = req.session.username
     Pill.create(req.body, (err, pill) => {
         res.redirect("/pills")
     })

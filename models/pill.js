@@ -16,7 +16,7 @@ const pillsSchema = new Schema({
     dosage: Number,
     beforeFood: Boolean,
     afterFood: Boolean,
-    quantity: Number
+    username: String,
 });
 
 const Pill = model("Pill", pillsSchema);
