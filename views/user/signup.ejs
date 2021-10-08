@@ -5,18 +5,21 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
-      <div>
+      <div class="signup-header">
+        <h1 class="signup-logo">PillBox</h1>
+        <img src ="/img/login background graphic.png">
+      </div>
+      <div class="signup-form">
+        <h2>Sign Up</h2>
         <form action="/user/signup" method="post">
-          <fieldset>
-            <legend>New User</legend>
             <label
-              >USERNAME: <input type="text" name="username" required />
-            </label>
+              >Username: <input type="text" name="username" required placeholder="Enter your email"/>
+            </label><br>
             <label
-              >PASSWORD: <input type="password" name="password" required />
-            </label>
-            <input type="submit" value="Create Account" />
-          </fieldset>
+              >Password: <input type="password" name="password" required placeholder="Enter password"/>
+            </label><br>
+            <input class="signup-button" type="submit" value="SIGNUP" />
+            <p class="login-link">Already have an account? <span><a href="/user/login">Login</a></span></p>
         </form>
       </div>
     </main>

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --orange: #e97312;
+    --yellow: #fdd72e;
+    --light-green: #a8dbd3;
+    --dark-green: #5a7400;
+}
+
+
+* {
+    box-sizing: border-box;
+    font-family: "Raleway";
+    margin:0 auto;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 390px;
+    height: 844px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.login-logo, .signup-logo {
+    font-size: 40px;
+    text-align: center;
+    color: #e97312;
+    margin-top: 30px;
+}
+
+.login-header img, .signup-header img {
+    margin-top:-40px;
+    margin-right: 50px;
+    width: 450px;
+    display:block;
+}
+
+.login-form, .signup-form {
+    background-color: var(--light-green);
+    height: 600px;
+    text-align: left;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+h2{
+    margin-bottom: 20px;
+    color: rgb(44, 44, 44);
+}
+
+input {
+    width: 95%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: 0;
+    border: 1px solid var(--yellow);
+  }
+
+.login-button, .signup-button {
+    background-color: var(--orange);
+    color: white;
+    border: none;
+}
+
+.signup-link, .login-link {
+    margin-top: 80px;
+    text-align: center;
+}
+
+a {
+    color: var(--orange);
+    text-decoration: none;
+  }
+
+
+.index-header{
+    height: 150px;
+    background-color: var(--light-green);
+}
+
+.index-header h2{
+    padding: 20px 20px 20px 20px;
+}

@@ -13,7 +13,7 @@ const pillsSchema = new Schema({
     description: String,
     color: String,
     shape: String,
-    dosage: Number,
+    stock: Number,
     beforeFood: Boolean,
     afterFood: Boolean,
     username: String,

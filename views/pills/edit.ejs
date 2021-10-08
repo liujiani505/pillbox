@@ -31,6 +31,13 @@
                         />
                     </label>
                     <label>
+                        STOCK:<input
+                        type="text"
+                        name="stock"
+                        value="<%= pill.stock %>"
+                        />
+                    </label>
+                    <label>
                         Before Food:<input type="checkbox" name="beforeFood" <%= pill.beforeFood ? "checked" : "" %>/>
                     </label>
                     <label>
@@ -43,3 +50,5 @@
         </main>
     </body>
 </html>
+
+

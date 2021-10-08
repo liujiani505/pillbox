@@ -10,6 +10,7 @@
                 <h2><%= pill.name %></h2>
                 <h3><%= pill.color %></h3>
                 <h3><%= pill.shape %></h3>
+                <h3><%= pill.stock %></h3>
                 <a href="/pills/<%= pill._id %>/edit"><button>Edit</button></a>
                 <form action="/pills/<%= pill._id %>?_method=DELETE" method="POST">
                     <input type="submit" value="Delete"/>

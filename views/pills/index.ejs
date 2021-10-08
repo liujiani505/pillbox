@@ -5,9 +5,11 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
+      <div class="index-header">
+        <h2>Health. Cared.</h2>
+        <h4>Welcome to your PillBox</h4>
+      </div>
       <div>
-        <a href="/user/logout"><button>Logout</button></a>
-        <a href="/pills/new"><button>Add A New Pill</button></a>
         <% for (pill of pills) { %>
             <article>
             <a href="/pills/<%= pill._id %>">
@@ -18,6 +20,10 @@
             </article>
         <% } %>
       </div>
+      <nav>
+        <a href="/user/logout"><button>Logout</button></a>
+        <a href="/pills/new"><button>Add A New Pill</button></a>
+      </nav>
     </main>
   </body>
 </html>
