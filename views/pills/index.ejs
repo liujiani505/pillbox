@@ -5,25 +5,30 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
-      <div class="index-header">
-        <h2>Health. Cared.</h2>
-        <h4>Welcome to your PillBox</h4>
-      </div>
-      <div>
-        <% for (pill of pills) { %>
-            <article>
-            <a href="/pills/<%= pill._id %>">
-                <h2>
-                <%= pill.name %>
-                </h2>
-            </a>
-            </article>
-        <% } %>
-      </div>
-      <nav>
-        <a href="/user/logout"><button>Logout</button></a>
-        <a href="/pills/new"><button>Add A New Pill</button></a>
-      </nav>
+        
+        <div class="index-header">
+          <h1>Health. Cared.</h1>
+          <p>Welcome to your PillBox, <%= username %>!</p>
+          <img src="/img/pills.png" width="200px">
+        </div>
+        <div class="container">
+          <h2>Your medicines for <span>today</span></h2>
+          <% for (pill of pills) { %>
+            <a class="card-a" href="/pills/<%= pill._id %>">
+              <article class="card">
+                <div class="card-img">
+                </div>
+                <div class="card-content">
+                  <h3><%= pill.name %></h3>
+                  <p><%= pill.color %></p>
+                  <p><%= pill.shape %></p>
+                  <p><%= pill.stock %></p>
+                </div>
+              </article>
+            </a> 
+          <% } %>
+        </div>
+        <%- include("../partials/nav.ejs") %>
     </main>
   </body>
 </html>

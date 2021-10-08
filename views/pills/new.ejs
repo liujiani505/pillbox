@@ -8,7 +8,7 @@
             <div>
                 <form action="/pills" method="post">
                     <fieldset>
-                        <legend>Create a New Pill</legend>
+                        <legend>Add a New Medicine</legend>
                     <label>
                         NAME:<input
                         type="text"
@@ -43,10 +43,11 @@
                     <label>
                         After Food:<input type="checkbox" name="afterFood"/>
                     </label>
-                    </fieldset>
-                    <input type="submit" value="create" />
+                    </fieldset">
+                    <input class="new-button" type="submit" value="ADD" />
                 </form>
             </div>
+            <%- include("../partials/nav.ejs") %>
         </main>
     </body>
 </html>

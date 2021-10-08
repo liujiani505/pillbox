@@ -31,7 +31,8 @@ router.use((req, res, next) => {
 // Index Route
 router.get("/", async (req, res) => {
     const pills = await Pill.find({username: req.session.username});
-    res.render("pills/index.ejs", { pills });
+    const username = req.session.username;
+    res.render("pills/index.ejs", { pills, username});
 })
 
 // New Route
