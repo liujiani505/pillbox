@@ -5,51 +5,44 @@
     <body>
     <%- include("../partials/header.ejs") %>
         <main>
-            <div>
+            <a href="/pills/<%= pill._id %>"><img class="arrow" src="/img/arrow.png" width="20px"></a>
+            <h2 class="edit">Edit <%= pill.name %></h2>
+            <div class="edit-container">
                 <form action="/pills/<%= pill._id %>?_method=PUT" method="post">
                     <fieldset>
-                        <legend>Edit a <%= pill.name %></legend>
-                    <label>
-                        NAME:<input
-                        type="text"
-                        name="name"
-                        value="<%= pill.name %>"
-                        />
-                    </label>
-                    <label>
-                        COLOR:<input
-                        type="text"
-                        name="color"
-                        value="<%= pill.color %>"
-                        />
-                    </label>
-                    <label>
-                        SHAPE:<input
-                        type="text"
-                        name="shape"
-                        value="<%= pill.shape %>"
-                        />
-                    </label>
-                    <label>
-                        STOCK:<input
-                        type="text"
-                        name="stock"
-                        value="<%= pill.stock %>"
-                        />
-                    </label>
-                    <label>
-                        Before Food:<input type="checkbox" name="beforeFood" <%= pill.beforeFood ? "checked" : "" %>/>
-                    </label>
-                    <label>
-                        After Food:<input type="checkbox" name="afterFood" <%= pill.afterFood ? "checked" : "" %>/>
-                    </label>
-                    </fieldset>
-                    <input type="submit" value="Update <%= pill.name %>" />
-                </form>
+                        <label>
+                            Medicine Name:<input
+                            type="text"
+                            name="name"
+                            placeholder="enter your medicine name"
+                            />
+                        </label>
+                        <label>Choose a medicine type: </label>
+                            <select id="medication-type" name="type">
+                                <option value="capsule">Capsule</option>
+                                <option value="tablet">Tablet</option>
+                                <option value="softgel">Softgel</option>
+                                <option value="syrup">Syrup</option>
+                                <option value="aerosol">Aerosol</option>
+                                <option value="injection">Injection</option>
+                            </select>
+                        <label><br>
+                            Stock:<input
+                            type="number"
+                            name="stock"
+                            placeholder="enter your medication stock"
+                            />
+                        </label>
+                        <div class="time">
+                            <label for="time">Time</label> <input id="time" type="time">
+                        </div>
+                        </fieldset>
+                        <input id="edit-button" type="submit" value="Submit" />
+                    </form>
             </div>
+            <div class="nav-bar">
             <%- include("../partials/nav.ejs") %>
+            </div>
         </main>
     </body>
 </html>
-
-

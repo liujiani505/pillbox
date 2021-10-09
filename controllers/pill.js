@@ -4,7 +4,6 @@
 const express = require("express")
 const Pill = require("../models/pill")
 
-
 /////////////////////////////////////////
 // Create Route
 /////////////////////////////////////////
@@ -42,11 +41,10 @@ router.get("/new", (req, res) => {
 
 // Create Route
 router.post("/", (req, res) => {
+    console.log(req.body)
     req.body.name = req.body.name;
-    req.body.color = req.body.color;
-    req.body.shape = req.body.shape;
-    req.body.beforeFood = req.body.beforeFood;
-    req.body.afterFood = req.body.afterFood;
+    req.body.stock = req.body.stock;
+    req.body.time = req.body.time;
     req.body.username = req.session.username
     Pill.create(req.body, (err, pill) => {
         res.redirect("/pills")
@@ -65,10 +63,6 @@ router.get("/:id/edit", (req, res) => {
 router.put("/:id", (req, res) => {
     const id = req.params.id;
     req.body.name = req.body.name;
-    req.body.color = req.body.color;
-    req.body.shape = req.body.shape;
-    req.body.beforeFood = req.body.beforeFood;
-    req.body.afterFood = req.body.afterFood;
     Pill.findByIdAndUpdate(id, req.body, {new: true}, (err, fruit) => {
         res.redirect("/pills");
     })

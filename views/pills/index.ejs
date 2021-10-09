@@ -7,22 +7,34 @@
     <main>
         
         <div class="index-header">
-          <h1>Health. Cared.</h1>
-          <p>Welcome to your PillBox, <%= username %>!</p>
-          <img src="/img/pills.png" width="200px">
+          <h1>Welcome to your PillBox, <%= username %>!</h1>
+          <!-- <img src="/img/pills.png" width="150px"> -->
         </div>
         <div class="container">
-          <h2>Your medicines for <span>today</span></h2>
+          <h4>Your medicines for today:</h4>
           <% for (pill of pills) { %>
             <a class="card-a" href="/pills/<%= pill._id %>">
               <article class="card">
-                <div class="card-img">
-                </div>
                 <div class="card-content">
                   <h3><%= pill.name %></h3>
-                  <p><%= pill.color %></p>
-                  <p><%= pill.shape %></p>
-                  <p><%= pill.stock %></p>
+                  <p><strong>Stock:</strong> <%= pill.stock %></p>
+                  <p><strong>Type:</strong> <%= pill.type %></p>
+                  <p><strong>Time:</strong> <%= pill.time %></p>
+                </div>
+                <div class="card-image" >
+                  <% if(pill.type === "capsule"){ %>
+                    <img src ="/img/capsule.png" width="80px">
+                    <% } else if (pill.type === "tablet") { %>
+                      <img src ="/img/tablets.png" width="80px">
+                    <% } else if (pill.type === "softgel") { %> 
+                      <img src ="/img/softgel.png" width="80px">
+                    <% } else if (pill.type === "syrup") { %> 
+                      <img src ="/img/syrup.png" width="80px">
+                    <% } else if (pill.type === "aerosol") { %> 
+                      <img src ="/img/aerosol.png" width="80px">
+                    <% } else if (pill.type === "injection") { %> 
+                      <img src ="/img/injection.png" width="80px">
+                  <% } %> 
                 </div>
               </article>
             </a> 

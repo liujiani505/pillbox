@@ -5,18 +5,33 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
-      <div> 
-            <article>
-                <h2><%= pill.name %></h2>
-                <h3><%= pill.color %></h3>
-                <h3><%= pill.shape %></h3>
-                <h3><%= pill.stock %></h3>
-                <a href="/pills/<%= pill._id %>/edit"><button>Edit</button></a>
-                <form action="/pills/<%= pill._id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete"/>
-                </form>
-                <a href="/pills/"><button>Back to Main</button></a>
-            </article>
+      <a href="/pills/"><img class="arrow" src="/img/arrow.png" width="20px"></a>
+      <div class="show-container"> 
+        <div class="show-image" >
+          <% if(pill.type === "capsule"){ %>
+            <img src ="/img/capsule.png" width="160px">
+            <% } else if (pill.type === "tablet") { %>
+              <img src ="/img/tablets.png" width="160px">
+            <% } else if (pill.type === "softgel") { %> 
+              <img src ="/img/softgel.png" width="160px">
+            <% } else if (pill.type === "syrup") { %> 
+              <img src ="/img/syrup.png" width="160px">
+            <% } else if (pill.type === "aerosol") { %> 
+              <img src ="/img/aerosol.png" width="160px">
+            <% } else if (pill.type === "injection") { %> 
+              <img src ="/img/injection.png" width="160px">
+          <% } %> 
+        </div>
+        <article class="show-info">
+          <h1><%= pill.name %></h1>
+          <p><strong>Stock:</strong> <%= pill.stock %></p>
+          <p><strong>Type:</strong> <%= pill.type %></p>
+          <p><strong>Time:</strong> <%= pill.time %></p>
+          <a href="/pills/<%= pill._id %>/edit"><input class="edit-button" value="Edit"></input></a>
+          <form action="/pills/<%= pill._id %>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete"/>
+          </form>
+        </article>
       </div>
       <%- include("../partials/nav.ejs") %>
     </main>

@@ -10,12 +10,9 @@ const {Schema, model} = mongoose;
 
 const pillsSchema = new Schema({
     name: String,
-    description: String,
-    color: String,
-    shape: String,
     stock: Number,
-    beforeFood: Boolean,
-    afterFood: Boolean,
+    type: String,
+    time: String,
     username: String,
 });
 
