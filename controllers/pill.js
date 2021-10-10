@@ -62,6 +62,8 @@ router.get("/:id/edit", (req, res) => {
 // Update Route
 router.put("/:id", (req, res) => {
     const id = req.params.id;
+    req.body.stock = req.body.stock;
+    req.body.time = req.body.time;
     req.body.name = req.body.name;
     Pill.findByIdAndUpdate(id, req.body, {new: true}, (err, fruit) => {
         res.redirect("/pills");

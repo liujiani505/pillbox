@@ -10,6 +10,7 @@ const {Schema, model} = mongoose;
 
 const pillsSchema = new Schema({
     name: String,
+    quantity: Number,
     stock: Number,
     type: String,
     time: String,

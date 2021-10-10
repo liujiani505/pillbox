@@ -26,7 +26,6 @@
           <h1><%= pill.name %></h1>
           <p><strong>Stock:</strong> <%= pill.stock %></p>
           <p><strong>Type:</strong> <%= pill.type %></p>
-          <p><strong>Time:</strong> <%= pill.time %></p>
           <a href="/pills/<%= pill._id %>/edit"><input class="edit-button" value="Edit"></input></a>
           <form action="/pills/<%= pill._id %>?_method=DELETE" method="POST">
               <input type="submit" value="Delete"/>

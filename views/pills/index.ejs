@@ -14,7 +14,7 @@
           <h4>Your medicines for today:</h4>
           <% for (pill of pills) { %>
             <a class="card-a" href="/pills/<%= pill._id %>">
-              <article class="card">
+              <article class="card">               
                 <div class="card-content">
                   <h3><%= pill.name %></h3>
                   <p><strong>Stock:</strong> <%= pill.stock %></p>
