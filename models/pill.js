@@ -13,7 +13,7 @@ const pillsSchema = new Schema({
     stock: Number,
     type: String,
     time: String,
-    dosage: Number,
+    quantity: Number,
     username: String,
 });
 

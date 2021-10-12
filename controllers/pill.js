@@ -44,6 +44,7 @@ router.post("/", (req, res) => {
     console.log(req.body)
     req.body.name = req.body.name;
     req.body.stock = req.body.stock;
+    req.body.quantity = req.body.quantity;
     req.body.time = req.body.time;
     req.body.username = req.session.username
     Pill.create(req.body, (err, pill) => {
@@ -63,6 +64,7 @@ router.get("/:id/edit", (req, res) => {
 router.put("/:id", (req, res) => {
     const id = req.params.id;
     req.body.stock = req.body.stock;
+    req.body.quantity = req.body.quantity;
     req.body.time = req.body.time;
     req.body.name = req.body.name;
     Pill.findByIdAndUpdate(id, req.body, {new: true}, (err, fruit) => {
