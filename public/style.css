@@ -3,7 +3,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
 
 :root{
-    --orange: #e97312;
+    --orange: #f17400;
     --yellow: #fdd72e;
     --light-green: #a8dbd3;
     --dark-green: #00493d;
@@ -63,7 +63,7 @@ main {
 .login-logo, .signup-logo {
     font-size: 40px;
     text-align: center;
-    color: #e97312;
+    color: var(--orange);
     margin-top: 30px;
 }
 
@@ -119,13 +119,14 @@ a {
 
 /* Index page styles */
 .index-header{
-    height: 100px;
+    height: 120px;
+    background-color: var(--light-green);
+    padding: 10px;
 }
 
 .index-header h1{
-    padding: 0px 0px 0px 45px;
+    padding: 0px 0px 0px 35px;
     color: var(--dark-green);
-    width:80%
 }
 
 .flex-container h2{
@@ -149,8 +150,6 @@ a {
     flex-direction: column;
     height: 660px;
     overflow-x: scroll;
-    overflow-y: auto;
-    background-color: var(--light-green);
 }
 
 .container h4{
@@ -160,13 +159,14 @@ a {
 .card {
     background-color: white;
     color: var(--dark-green);
-    margin: 5px 5px;
+    margin: 5px 40px;
     width: 300px;
-    height: 140px; 
+    height: 150px; 
     border-radius: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 25px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
     display: flex;
+    flex-shrink: 0  
 }
 
 .card-content p{
@@ -177,6 +177,17 @@ a {
 .card-content h3{
     color: var(--orange);
 }
+
+.check-button{
+    font-size: 20px;
+}
+
+.active{
+     background-color: #f17400;
+     color: white;
+     border-radius: 18px;
+}
+
 
 /*  Signout modal */
 .signout-popup {

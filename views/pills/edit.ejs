@@ -17,6 +17,13 @@
                             value="<%= pill.name %>"
                             />
                         </label>
+                        <label>
+                            Dosage:<input
+                            type="number"
+                            name="dosage"
+                            value="<%= pill.dosage %>"
+                            />
+                        </label>
                         <label>Choose a medicine type: </label>
                             <select id="medication-type" name="type">
                                 <option value="capsule" <%= pill.type === 'capsule' ?'selected' : '' %> >Capsule</option>

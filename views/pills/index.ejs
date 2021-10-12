@@ -8,16 +8,22 @@
         
         <div class="index-header">
           <h1>Welcome to your PillBox, <%= username %>!</h1>
-          <!-- <img src="/img/pills.png" width="150px"> -->
+
         </div>
         <div class="container">
           <h4>Your medicines for today:</h4>
           <% for (pill of pills) { %>
-            <a class="card-a" href="/pills/<%= pill._id %>">
-              <article class="card">               
+              <article class="card">
+                <div class="check-button">
+                <i class="far fa-check-circle"></i>
+                </div>
                 <div class="card-content">
-                  <h3><%= pill.name %></h3>
-                  <p><strong>Stock:</strong> <%= pill.stock %></p>
+                  <a href="/pills/<%= pill._id %>">
+                    <h3><%= pill.name %></h3>
+                  </a>
+                  <p><%= pill.dosage %> per day</p>
+                  <p><strong>Stock: </strong><%= pill.stock %>
+                  </p>
                   <p><strong>Type:</strong> <%= pill.type %></p>
                   <p><strong>Time:</strong> <%= pill.time %></p>
                 </div>
@@ -37,7 +43,6 @@
                   <% } %> 
                 </div>
               </article>
-            </a> 
           <% } %>
         </div>
         <%- include("../partials/nav.ejs") %>

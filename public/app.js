@@ -5,3 +5,9 @@ $(document).ready(function(){
         $('body').css()
     })
 })
+
+
+$(".fa-check-circle").click(function(){
+    $(this).toggleClass("active")
+})
+

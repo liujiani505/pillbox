@@ -12,7 +12,8 @@ const Pill = require("./pill")
 mongoose.connection.on("open", () => {
     // array of starter pills
     const startPills = [
-        {name: "ibuprofen", color: "White", shape:"Capsule-shape", dosage: 400, after_food: true, quantity: 50}
+        {name: "ibuprofen", stock: 20, type: "capsule", time: "10:45 am", dosage: 2
+        }
     ]
     // Delete all pills
     Pill.deleteMany({}, (err, data) => {
@@ -24,3 +25,4 @@ mongoose.connection.on("open", () => {
         })
     })
 });
+
