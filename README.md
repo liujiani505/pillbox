@@ -12,6 +12,7 @@
 - Node.js
 - Express.js
 - Mongoose
+- MongoDB
 
 ### Getting Started: 
 https://pillbox-project2.herokuapp.com/
